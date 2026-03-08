@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Sign Language Translator</title>
+
+<link rel="stylesheet" href="sl.css">
+
+<!-- TensorFlow -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+
+<!-- MediaPipe -->
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+
+</head>
+
+<body>
+
+<h1>AI Sign Language Translator</h1>
+
+<div class="container">
+<video id="video" autoplay></video>
+<canvas id="canvas"></canvas>
+</div>
+
+<div class="output">
+<h2>Detected Letter</h2>
+<p id="letter">None</p>
+</div>
+
+<div class="sentenceBox">
+<h2>Sentence</h2>
+<p id="sentence"></p>
+</div>
+
+<div class="buttons">
+
+<button onclick="addLetter()">Add Letter</button>
+<button onclick="speakSentence()">Speak</button>
+<button onclick="clearSentence()">Clear</button>
+
+</div>
+
+<div class="training">
+
+<h2>Training Mode</h2>
+
+<input id="gestureLabel" placeholder="Enter Letter (A-Z)">
+<button onclick="collectSample()">Collect Sample</button>
+<button onclick="trainModel()">Train Model</button>
+
+</div>
+
+<script src="sl.js"></script>
+
+</body>
+</html>
